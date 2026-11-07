@@ -9,10 +9,11 @@ Personalized **36-week hands-on learning path** for transitioning from enterpris
 1. [Personalized 36-week roadmap (v2)](ROADMAP.md)
 2. [Entry assessment and rubric](assessments/ENTRY-ASSESSMENT.md)
 3. [Udemy Business practical courses](COURSES.md)
-4. [Technical English integrated practice](TECHNICAL_ENGLISH.md)
-5. [Lab A — Linux & Networking](assessments/lab-a-linux-networking.md)
-6. [Week 1 starter lab](labs/w01-linux-networking/README.md)
-7. [Target architecture](docs/ARCHITECTURE.md)
+4. [Azure-first cloud infrastructure track](AZURE_TRACK.md)
+5. [Technical English integrated practice](TECHNICAL_ENGLISH.md)
+6. [Lab A — Linux & Networking](assessments/lab-a-linux-networking.md)
+7. [Week 1 starter lab](labs/w01-linux-networking/README.md)
+8. [Target architecture](docs/ARCHITECTURE.md)
 
 The [original roadmap (v1)](docs/roadmap-v1.md) is archived for comparison.
 
