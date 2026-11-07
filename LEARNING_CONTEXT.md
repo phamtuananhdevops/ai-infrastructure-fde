@@ -52,3 +52,11 @@ AI mentor expectations:
 
 ## New account onboarding
 Read this file, ROADMAP.md, PROGRESS.md, SESSION_HANDOFF.md and relevant assessment/lab files. Confirm current state before assigning work. GitHub is the durable record; chat memory is not portable between accounts.
+
+## Career preferences and target (conversation: 2026-11-07)
+- **Location:** Remain based in Vietnam; no relocation. Prefer fully remote work from Vietnam; occasional business travel is acceptable.
+- **Target employers:** Vietnam-based or international companies that legally support remote work from Vietnam.
+- **Compensation goal:** At least **50 million VND net per month** for a potential move; compare after-tax pay, insurance, bonuses, benefits, and contract stability. This is a personal target, not a guaranteed market outcome.
+- **Current position:** Happy at Bosch and values the team; not actively seeking to resign. Learning is a backup plan to improve long-term career resilience and options.
+- **Career path:** Prioritize Azure Platform / Cloud Engineering foundations, then specialize in AI Infrastructure; verify skills against Vietnam and remote job descriptions periodically.
+- **Learning risk:** Course-only study leads to forgetting and lost motivation. Prefer practical project-led learning, production-like incident simulations, and technical English explanations.
