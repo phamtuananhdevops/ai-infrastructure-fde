@@ -23,6 +23,8 @@ Transition from System Engineer / enterprise Application Operations into AI Infr
 
 - Learner has access to Udemy Business; use targeted hands-on courses, not certification study. Course availability in their organizational catalog is not yet verified.
 
+- English confidence is limited: teach technical topics in Vietnamese first, then practice simple professional English; see [Technical English](TECHNICAL_ENGLISH.md).
+
 ## Method
 **Build → Break → Fix → Explain.** One evolving Enterprise AI Inference Platform project.
 
