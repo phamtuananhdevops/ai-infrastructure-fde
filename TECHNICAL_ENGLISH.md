@@ -1,7 +1,14 @@
 # Technical English for AI Infrastructure FDE
 
 ## Goal
-Build practical spoken and written English for infrastructure incidents, customer deployments, technical explanations and interviews. **Not an English certificate course.** Current English level is self-reported as needing improvement; no formal assessment completed.
+Build practical spoken and written English for infrastructure incidents, customer deployments, technical explanations and interviews. **Not an English certificate course.** Listening is self-reported as adequate; **speaking is the primary weakness**. No formal assessment completed.
+
+## Speaking-first routine (15 minutes, 5 days/week)
+- 5 minutes: shadow a short relevant Udemy clip, repeating aloud.
+- 5 minutes: explain a current technical concept without reading a script.
+- 5 minutes: role-play with AI mentor as customer or senior engineer, with follow-up questions.
+- One weekly speaking challenge tied to the active infrastructure topic; score clarity, structure, technical accuracy and response to follow-ups. Do not claim speech evaluation without actual spoken evidence.
+- Listening practice is supportive, not the main focus.
 
 ## Coaching method
 - Explain technical concepts in Vietnamese first; practice short English explanations of the same work.
@@ -13,7 +20,7 @@ Build practical spoken and written English for infrastructure incidents, custome
 ## Weekly integration (8–10h total)
 - Hands-on build/break/fix: 5h
 - Targeted Udemy and documentation: 2h
-- Technical English: 1h
+- Technical English: approximately 1–1.25h, primarily speaking (15 minutes x 5 days)
 - Runbook, reflection and GitHub evidence: 1–2h
 
 ## Progression
