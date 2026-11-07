@@ -39,6 +39,10 @@ See [Technical English](TECHNICAL_ENGLISH.md) for bilingual video and incident-r
 6. Track course title, specific section/lecture, why it was used, evidence URL and outcome in PROGRESS.md.
 7. Udemy Business course availability is **unverified** until confirmed by the learner in their organization's catalog.
 
+## Azure-first additions
+
+Search Udemy Business for practical Azure VNet/RBAC, AKS, Terraform on Azure, Azure Monitor/Log Analytics, Azure Key Vault and GPU serving. Availability is unverified; use [Azure Track](AZURE_TRACK.md) to map lessons to labs. No certificate-oriented courses are required.
+
 ## Alternative searches within Udemy Business
 
 If a named course is unavailable, search the Business catalog for: **Kubernetes troubleshooting**, **Docker Kubernetes hands-on**, **Helm Argo CD GitOps**, **Prometheus Grafana**, **vLLM inference**, **KServe**, **GPU Kubernetes**, **MLOps deployment**. Choose based on hands-on coverage and current tooling rather than certificate alignment.
