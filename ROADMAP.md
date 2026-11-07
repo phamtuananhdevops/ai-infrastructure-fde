@@ -1,3 +1,18 @@
+> **Learning policy update (2026-11-07): Competency-based, quality-first.** The 36-week schedule below is an optional pacing reference, **not a deadline**. Advancement depends on independently verified skills, production-grade evidence and stage exit assessments. Longer study time is acceptable. Do not claim job readiness solely because weeks have elapsed.
+
+## Stage exit gates
+
+1. Infrastructure foundations: diagnose networking, process and proxy failures with evidence.
+2. Azure engineering: build secure networking, identity and infrastructure-as-code with cleanup/cost controls.
+3. Kubernetes/AKS: deploy, troubleshoot and recover workloads independently.
+4. Platform engineering: repeatable GitOps delivery, rollback, metrics, security and operational runbooks.
+5. AI/LLM infrastructure: explain and operate model serving, GPU resource management and performance trade-offs.
+6. Production AI platform: demonstrate SLOs, load tests, capacity, incident recovery and cost analysis.
+7. Forward deployment: customer discovery, secure environment adaptation, handover and spoken English explanation.
+8. Capstone: design, deploy, break/fix, document and defend an end-to-end enterprise AI inference platform.
+
+**Gate rule:** Evidence and reviewer feedback determine progression. Failed or incomplete assessments lead to targeted practice, not automatic promotion.
+
 # AI Infrastructure FDE — Personalized 36-Week Roadmap (v2)
 
 **Goal:** Transition from enterprise System Engineering / Application Operations into AI Infrastructure / Forward Deployed Infrastructure Engineering.
