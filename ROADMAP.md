@@ -14,6 +14,10 @@
 
 **Weekly budget:** 8–10 hours (about 5h building/debugging, 2h focused reading, 1h documentation, 1h English/interview). **Method:** Build → Break → Fix → Explain.
 
+## Azure-first cloud integration
+
+**Microsoft Azure is the primary cloud**, integrated across all phases (identity/networking → AKS → Terraform → GPU inference → enterprise operations). See [Azure Cloud Track](AZURE_TRACK.md) for week-by-week hands-on outcomes. AWS/GCP are optional conceptual mappings, not parallel learning tracks. Azure access and spend are not yet verified.
+
 ## Weekly schedule
 
 | Week | Phase | Hands-on focus | Status |
