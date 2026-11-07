@@ -2,6 +2,8 @@
 
 This file is the durable, portable context for any AI mentor, including a different ChatGPT account.
 
+**Learning priority:** quality and verified job-relevant competence over speed. The 36-week schedule is only a reference; 12–24 months or longer is acceptable if needed. Never advance based only on elapsed time or video completion.
+
 ## Goal
 Transition from System Engineer / enterprise Application Operations into AI Infrastructure / Forward Deployed Infrastructure Engineering through a 36-week, project-based portfolio.
 
