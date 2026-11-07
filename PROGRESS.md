@@ -6,7 +6,7 @@
 ## Overall status
 - Preferred cloud: **Microsoft Azure**; Azure hands-on track added, no cloud lab evidence or Azure subscription verified.
 - Udemy Business: **integrated as an optional targeted learning resource; no course enrollment or completion verified**.
-- Roadmap: **v2 agreed**, 36 weeks, 8–10 hours/week.
+- Roadmap: **competency-based, quality-first**; original 36-week pacing is reference only, no fixed completion deadline. Typical weekly study budget remains 8–10 hours.
 - Current phase: **Entry assessment**, before hands-on curriculum.
 - Overall completed weeks: **0 / 36**.
 - Entry assessment completed: **0 / 5**.
