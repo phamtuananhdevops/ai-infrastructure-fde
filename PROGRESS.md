@@ -4,6 +4,7 @@
 **Source of truth:** Evidence and explicit learner confirmations. This file is not an automated telemetry feed.
 
 ## Overall status
+- Preferred cloud: **Microsoft Azure**; Azure hands-on track added, no cloud lab evidence or Azure subscription verified.
 - Udemy Business: **integrated as an optional targeted learning resource; no course enrollment or completion verified**.
 - Roadmap: **v2 agreed**, 36 weeks, 8–10 hours/week.
 - Current phase: **Entry assessment**, before hands-on curriculum.
