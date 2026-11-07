@@ -21,6 +21,8 @@ Transition from System Engineer / enterprise Application Operations into AI Infr
 - Minimize cloud costs; use local and open-source tools first.
 - Language: conversational Vietnamese for coaching; practice English for technical documentation and customer communication.
 
+- Learner has access to Udemy Business; use targeted hands-on courses, not certification study. Course availability in their organizational catalog is not yet verified.
+
 ## Method
 **Build → Break → Fix → Explain.** One evolving Enterprise AI Inference Platform project.
 
@@ -35,6 +37,7 @@ AI mentor expectations:
 
 ## Canonical project documents
 - [Roadmap v2](ROADMAP.md)
+- [Udemy Business course map](COURSES.md)
 - [Entry assessment](assessments/ENTRY-ASSESSMENT.md)
 - [Lab A](assessments/lab-a-linux-networking.md)
 - [Progress](PROGRESS.md)
