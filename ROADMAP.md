@@ -1,64 +1,94 @@
-# AI Infrastructure FDE — 36-week roadmap
+# AI Infrastructure FDE — Personalized 36-Week Roadmap (v2)
 
-**Audience:** System Engineer / Application Operations with basic Terraform, Ansible and Jenkins experience.
-**Cadence:** 8–10 hours/week: 2h study, 5h lab, 1h documentation, 1h review.
-**GPU:** Not required for the first 21 weeks. Rent GPU briefly for validation in weeks 22–24.
+**Goal:** Transition from enterprise System Engineering / Application Operations into AI Infrastructure / Forward Deployed Infrastructure Engineering.
 
-| Week | Phase | Topic | Status |
+## Starting self-assessment (unverified)
+
+| Domain | Self-rating (1–5) | Learning strategy |
+|---|---:|---|
+| Linux & Networking | 4 | Validate through entry assessment; skip basics if proven |
+| Terraform / Automation | 3 | Refresh through integrated platform labs |
+| Kubernetes & Platform | 1 | Intensive hands-on focus in weeks 5–12 |
+| GPU & AI Inference | 1 | Start CPU inference immediately; rent GPU later |
+| Customer Delivery & English | 1 | Practice weekly from week 1 |
+
+**Weekly budget:** 8–10 hours (about 5h building/debugging, 2h focused reading, 1h documentation, 1h English/interview). **Method:** Build → Break → Fix → Explain.
+
+## Weekly schedule
+
+| Week | Phase | Hands-on focus | Status |
 |---:|---|---|---|
-| 1 | Infrastructure Foundations | Linux networking | Planned |
-| 2 | Infrastructure Foundations | Containers | Planned |
-| 3 | Infrastructure Foundations | Terraform state | Planned |
-| 4 | Infrastructure Foundations | Terraform modules | Planned |
-| 5 | Infrastructure Foundations | Ansible roles | Planned |
-| 6 | Infrastructure Foundations | Jenkins pipeline | Planned |
-| 7 | Infrastructure Foundations | Kubernetes basics | Planned |
-| 8 | Infrastructure Foundations | Kubernetes troubleshooting | Planned |
-| 9 | Platform Engineering | Helm | Planned |
-| 10 | Platform Engineering | Argo CD | Planned |
-| 11 | Platform Engineering | Ingress TLS | Planned |
-| 12 | Platform Engineering | Kubernetes security | Planned |
-| 13 | Platform Engineering | Observability | Planned |
-| 14 | Platform Engineering | SLO alerting | Planned |
-| 15 | Platform Engineering | Reliability | Planned |
-| 16 | Platform Engineering | Project 1 milestone | Planned |
-| 17 | AI Infrastructure | GPU fundamentals | Planned |
-| 18 | AI Infrastructure | GPU scheduling | Planned |
-| 19 | AI Infrastructure | llama.cpp CPU inference | Planned |
-| 20 | AI Infrastructure | Inference API gateway | Planned |
-| 21 | AI Infrastructure | vLLM deployment | Planned |
-| 22 | AI Infrastructure | Rented GPU lab | Planned |
-| 23 | AI Infrastructure | Inference benchmarking | Planned |
-| 24 | AI Infrastructure | Project 2 milestone | Planned |
-| 25 | Forward Deployment | Customer discovery | Planned |
-| 26 | Forward Deployment | Reference architecture | Planned |
-| 27 | Forward Deployment | Deployment packaging | Planned |
-| 28 | Forward Deployment | Enterprise security | Planned |
-| 29 | Forward Deployment | Restricted networks | Planned |
-| 30 | Forward Deployment | Capacity planning | Planned |
-| 31 | Forward Deployment | Operations handover | Planned |
-| 32 | Forward Deployment | Project 3 milestone | Planned |
-| 33 | Career Readiness | Portfolio | Planned |
-| 34 | Career Readiness | Technical interviews | Planned |
-| 35 | Career Readiness | FDE simulation | Planned |
-| 36 | Career Readiness | Job applications | Planned |
+| 1 | Baseline & CPU Inference | Baseline assessment and lab environment | Not started |
+| 2 | Baseline & CPU Inference | llama.cpp CPU inference and latency | Not started |
+| 3 | Baseline & CPU Inference | FastAPI inference gateway, auth, streaming | Not started |
+| 4 | Baseline & CPU Inference | Docker Compose and resource limits | Not started |
+| 5 | Kubernetes Intensive | kind cluster, Pods, Deployments, Services | Not started |
+| 6 | Kubernetes Intensive | ConfigMap, Secrets, probes, resource requests | Not started |
+| 7 | Kubernetes Intensive | CoreDNS, Services, ingress and TLS | Not started |
+| 8 | Kubernetes Intensive | PV/PVC, model cache and storage | Not started |
+| 9 | Kubernetes Intensive | Helm chart and release lifecycle | Not started |
+| 10 | Kubernetes Intensive | RBAC, ServiceAccounts and NetworkPolicy | Not started |
+| 11 | Kubernetes Intensive | CrashLoopBackOff, OOM, DNS and rollout incidents | Not started |
+| 12 | Kubernetes Intensive | Rebuild and explain local Kubernetes platform | Not started |
+| 13 | Platform Automation | Terraform modules, state and drift | Not started |
+| 14 | Platform Automation | Ansible idempotency and CI pipeline | Not started |
+| 15 | Platform Automation | Argo CD GitOps and reconciliation | Not started |
+| 16 | Platform Automation | Prometheus, Grafana, SLI and alerting | Not started |
+| 17 | GPU & AI Serving | GPU VRAM sizing, CUDA and compute concepts | Not started |
+| 18 | GPU & AI Serving | Kubernetes GPU device plugin and operator concepts | Not started |
+| 19 | GPU & AI Serving | Prefill, decode, KV cache and batching | Not started |
+| 20 | GPU & AI Serving | vLLM deployment configuration | Not started |
+| 21 | GPU & AI Serving | Short rented-GPU deployment and verification | Not started |
+| 22 | GPU & AI Serving | TTFT, throughput, p95 and concurrency benchmark | Not started |
+| 23 | GPU & AI Serving | Quantization and performance optimization | Not started |
+| 24 | GPU & AI Serving | End-to-end inference demo and incident runbook | Not started |
+| 25 | Enterprise Forward Deployment | Customer discovery and English questions | Not started |
+| 26 | Enterprise Forward Deployment | Reference architecture and trade-offs | Not started |
+| 27 | Enterprise Forward Deployment | Environment profiles and deployment packaging | Not started |
+| 28 | Enterprise Forward Deployment | Security, private registry, secrets and audit | Not started |
+| 29 | Enterprise Forward Deployment | Restricted-network/offline deployment simulation | Not started |
+| 30 | Enterprise Forward Deployment | Incident response and customer updates | Not started |
+| 31 | Enterprise Forward Deployment | Capacity, cost and GPU sizing | Not started |
+| 32 | Enterprise Forward Deployment | Acceptance tests, rollback and handover | Not started |
+| 33 | Portfolio & Interviews | Portfolio README, architecture and demo evidence | Not started |
+| 34 | Portfolio & Interviews | Technical interviews: K8s, GPU, IaC and debugging | Not started |
+| 35 | Portfolio & Interviews | English customer discovery and incident simulation | Not started |
+| 36 | Portfolio & Interviews | Targeted CV, applications and feedback | Not started |
 
-## Deliverable standards
-For each week: lab README, prerequisites, runnable commands, verification evidence, failure analysis and cleanup. Planned work is not implemented work.
+## Single evolving portfolio project
 
-## Milestones
-- Week 16: Kubernetes Platform Automation (Terraform, Ansible, Jenkins, Helm, GitOps, monitoring).
-- Week 24: AI Model Serving (llama.cpp CPU baseline, vLLM GPU test, benchmark).
-- Week 32: Enterprise AI Deployment Kit (security, restricted networks, acceptance, handover).
-- Week 36: Portfolio and FDE interviews.
+**Enterprise AI Inference Platform:** CPU model serving → API gateway → Docker → local Kubernetes → Helm/GitOps/observability → rented-GPU vLLM and benchmarks → enterprise customer deployment package.
 
-## Official resources
-- https://developer.hashicorp.com/terraform/tutorials
-- https://docs.ansible.com/
-- https://www.jenkins.io/doc/book/pipeline/
+- Week 4: CPU inference + gateway, containerized.
+- Week 12: Local Kubernetes inference platform, troubleshooting evidence.
+- Week 16: Repeatable automated GitOps platform with dashboards.
+- Week 24: GPU inference benchmark with recorded hardware, model and costs.
+- Week 32: Customer-ready deployment kit with security and operations handover.
+- Week 36: Public portfolio, mock interviews and targeted applications.
+
+## Entry assessment and status
+
+**Assessment A (Linux & Networking): PAUSED — NOT STARTED.** WSL2 Ubuntu with sudo is the intended lab environment. No score has been assigned. Resume when a lab machine is available.
+
+See [entry assessment](assessments/ENTRY-ASSESSMENT.md) and [Lab A instructions](assessments/lab-a-linux-networking.md).
+
+## Cost control
+
+- Weeks 1–16: local WSL2/Linux, Docker, kind and open-source tools; avoid paid cloud.
+- Weeks 17–20: GPU theory, configuration and sizing without GPU rental.
+- Weeks 21–24: rent GPU only for planned, time-boxed validation and benchmarking.
+- Weeks 25–36: reuse artifacts and metrics; use simulated customer environments and synthetic data.
+
+## Evidence and honesty
+
+The roadmap describes **planned work, not completed deployments**. Each lab needs reproducible commands, actual outputs, failure investigation, cleanup and cost notes. Never commit tokens, passwords, customer data or production configuration.
+
+## Learning resources
+
 - https://kubernetes.io/docs/tutorials/
+- https://kind.sigs.k8s.io/
+- https://helm.sh/docs/
 - https://argo-cd.readthedocs.io/
-- https://prometheus.io/docs/
-- https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/
-- https://github.com/ggml-org/llama.cpp
 - https://docs.vllm.ai/
+- https://github.com/ggml-org/llama.cpp
+- https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/
