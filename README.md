@@ -1,39 +1,38 @@
 # AI Infrastructure FDE Lab
 
-Hands-on **36-week roadmap (8–10 hours/week)** for a System Engineer / Application Operations professional moving toward **AI Infrastructure / Forward Deployed Infrastructure Engineering**.
+Personalized **36-week hands-on learning path** for transitioning from enterprise System Engineering / Application Operations to **AI Infrastructure / Forward Deployed Infrastructure Engineering**.
 
-> **Status:** Curriculum scaffold and Week 1 starter files. Later-week infrastructure and GPU labs are **planned, not implemented**. Do not mistake roadmap milestones for validated deployments.
+> **Current status:** Roadmap v2 agreed. **Lab A paused, not started, no score.** Later-week labs are planned, not implemented.
 
 ## Start here
 
-1. Read [36-week roadmap](ROADMAP.md).
-2. Follow [Week 1 Linux Networking Lab](labs/w01-linux-networking/README.md).
-3. Inspect the [FastAPI starter](apps/demo-api/main.py) and [Nginx configuration](labs/w01-linux-networking/nginx.conf).
-4. Use [deliverable standards](docs/DELIVERABLES.md) and [incident template](runbooks/incident-template.md).
-5. See the [target architecture](docs/ARCHITECTURE.md).
+1. [Personalized 36-week roadmap (v2)](ROADMAP.md)
+2. [Entry assessment and rubric](assessments/ENTRY-ASSESSMENT.md)
+3. [Lab A — Linux & Networking](assessments/lab-a-linux-networking.md)
+4. [Week 1 starter lab](labs/w01-linux-networking/README.md)
+5. [Target architecture](docs/ARCHITECTURE.md)
 
-## Portfolio milestones
+The [original roadmap (v1)](docs/roadmap-v1.md) is archived for comparison.
 
-| Week | Project | Goal |
-|---:|---|---|
-| 16 | Kubernetes Platform Automation | IaC, CI/CD, GitOps, observability |
-| 24 | AI Model Serving Platform | CPU baseline, rented GPU vLLM validation, benchmarks |
-| 32 | Enterprise AI Deployment Kit | Secure deployment, operations and customer handover |
+## Learning approach
 
-## Local API starter
+**Build → Break → Fix → Explain.** Build one evolving **Enterprise AI Inference Platform** instead of disconnected tutorial projects. Focus on Kubernetes, inference, GPU operations and customer-facing delivery. Use 8–10 hours per week, mostly hands-on, with WSL2 and local tools before any time-boxed GPU rental.
 
-```bash
-cd apps/demo-api
-python3 -m venv .venv
-. .venv/bin/activate
-pip install -r requirements.txt
-uvicorn main:app --host 127.0.0.1 --port 8000
-curl http://127.0.0.1:8000/healthz
-```
+## Project milestones
 
-## Security and integrity
+| Week | Evidence target |
+|---:|---|
+| 4 | CPU model serving + inference gateway |
+| 12 | Local Kubernetes inference platform |
+| 16 | Automated GitOps platform with observability |
+| 24 | Real GPU validation and benchmark |
+| 32 | Enterprise deployment kit and handover |
+| 36 | Portfolio and interviews |
 
-- Never commit credentials, secrets, customer information or production infrastructure details.
-- Record environment, exact commands, actual outputs, troubleshooting and cleanup for every completed lab.
-- AI-assisted coding is welcome, but verify commands and understand failure modes.
-- No personal NVIDIA GPU required; plan short rented GPU sessions around weeks 22–24.
+## Starter application
+
+See [FastAPI demo](apps/demo-api/main.py), [Dockerfile](apps/demo-api/Dockerfile), [Nginx sample](labs/w01-linux-networking/nginx.conf) and [CI starter](.github/workflows/starter-checks.yml). These starter artifacts are not proof of a complete production platform.
+
+## Evidence and security
+
+Document commands, actual results, troubleshooting, cleanup and cost. Never commit credentials, customer data or production configuration.
