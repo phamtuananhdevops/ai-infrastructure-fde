@@ -27,6 +27,8 @@ The latter two courses should be inspected for content currency, quality and acc
 | 25–32 | Enterprise deployment and customer delivery | Security checklist, deployment package, incident update, handover |
 | 33–36 | Targeted refresh only | Portfolio, architecture explanation and mock interviews |
 
+See [Technical English](TECHNICAL_ENGLISH.md) for bilingual video and incident-report practice.
+
 ## Rules
 
 1. **70% lab / 20% targeted learning / 10% runbook and English explanation.**
