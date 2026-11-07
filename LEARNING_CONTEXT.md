@@ -25,6 +25,8 @@ Transition from System Engineer / enterprise Application Operations into AI Infr
 
 - English listening is adequate but speaking is weak; prioritize spoken role-play and explanation. English confidence is limited: teach technical topics in Vietnamese first, then practice simple professional English; see [Technical English](TECHNICAL_ENGLISH.md).
 
+- Preferred cloud: **Microsoft Azure**. Focus on AKS, Azure networking/identity, Terraform, GPU infrastructure, observability and cost control. See [Azure Track](AZURE_TRACK.md).
+
 ## Method
 **Build → Break → Fix → Explain.** One evolving Enterprise AI Inference Platform project.
 
@@ -39,6 +41,7 @@ AI mentor expectations:
 
 ## Canonical project documents
 - [Roadmap v2](ROADMAP.md)
+- [Azure-first cloud track](AZURE_TRACK.md)
 - [Udemy Business course map](COURSES.md)
 - [Entry assessment](assessments/ENTRY-ASSESSMENT.md)
 - [Lab A](assessments/lab-a-linux-networking.md)
