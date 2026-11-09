@@ -13,7 +13,7 @@
 - Scores: **Not yet assigned**.
 - Practical lab: **Resumed — WSL2 environment readiness checks in progress.** No app deployment or incident lab completed.
 - Next task: **Lab A — Task 01**: sudo check blocked: `sudo -v` prompts for unknown user password. Clarify whether corporate-managed WSL before any password/sudoers changes; proceed with non-privileged checks where possible. Do not attempt memory pressure/OOM tests until isolation and limits are established.
-- Evidence now submitted for OS/kernel/CPU, RAM/swap/disk, and non-root user/group identity; application deployment and incident evidence are still pending. No rubric scores assigned.
+- Evidence now submitted for OS/kernel/CPU, RAM/swap/disk, non-root user/group identity and `ps` process snapshot; sudo authentication not successful. Application deployment and incident evidence still pending. No rubric scores assigned.
 
 ## Entry assessment
 | Section | Max points | Status | Score |
@@ -35,6 +35,8 @@ Linux 4/5; Terraform/Automation 3/5; Kubernetes 1/5; GPU/Inference 1/5; Customer
 | 2026-11-09 | Non-root sudo authentication | Learner ran `sudo -v && echo "sudo OK"`, received password prompt and `Sorry, try again`; learner says this sudo-group user has no known password. | Blocked — no verified sudo execution | Do not confuse group membership with passwordless sudo. Avoid repeated guesses or sudoers/password changes without confirming host ownership/policy. |
 | 2026-11-09 | WSL2 account/groups inspection | Output of `id` from non-root prompt: uid=1000(pam3hc), gid=1000(pam3hc), groups include 27(sudo) and 999(docker). | Non-root identity confirmed; sudo execution not yet verified | Docker group may confer root-equivalent power via rootful daemon/socket; do not presume least privilege from UID alone. |
 | 2026-11-09 | WSL2 memory and disk inspection | `free -h`: 7.8 GiB total, 5.8 GiB used, 124 MiB free, 1.8 GiB buff/cache, 1.6 GiB available, swap 403 MiB / 12 GiB. `df -h`: `/dev/sdd` mounted at `/` with 890 GiB available; `C:` at `/mnt/c` with 107 GiB available; Docker overlays shown. | Evidence accepted, readiness still partial | Swap occupancy does not prove swap activity; snapfuse 100% normal; do not infer host physical free capacity from WSL VHD `df`. Non-root sudo remains to verify. Avoid memory pressure tests until constrained. |
+
+| 2026-11-09 | Process memory snapshot (read-only) | `ps -eo pid,ppid,user,%mem,rss,comm --sort=-rss \| head -15`: java PID 11062 RSS 884080 KiB (~863 MiB), java PID 10238 RSS 562192 KiB (~549 MiB), kube-apiserver PID 3341 RSS 333696 KiB (~326 MiB); also Prometheus/Grafana. | Snapshot collected; no abnormal process established | System appears to run Kubernetes/monitoring processes; Java process identities unknown; no trend or leak evidence. Sensitive workplace information should not be uploaded. |
 
 ## Updating this file
 After each **actual learning session**, update: date, current week/task, evidence links, rubric scores, blockers, next action and any revised learning priorities. Do not fabricate progress or scores. Ask for confirmation when evidence is ambiguous.
