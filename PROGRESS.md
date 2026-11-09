@@ -12,7 +12,7 @@
 - Entry assessment completed: **0 / 5**.
 - Scores: **Not yet assigned**.
 - Practical lab: **Resumed — WSL2 environment readiness checks in progress.** No app deployment or incident lab completed.
-- Next task: **Lab A — Task 01**: verify sudo actually works from `pam3hc` (`sudo -v`), then begin safe application/proxy setup. No pressure/OOM tests until isolation and limits are established.
+- Next task: **Lab A — Task 01**: sudo check blocked: `sudo -v` prompts for unknown user password. Clarify whether corporate-managed WSL before any password/sudoers changes; proceed with non-privileged checks where possible. Do not attempt memory pressure/OOM tests until isolation and limits are established.
 - Evidence now submitted for OS/kernel/CPU, RAM/swap/disk, and non-root user/group identity; application deployment and incident evidence are still pending. No rubric scores assigned.
 
 ## Entry assessment
@@ -32,6 +32,7 @@ Linux 4/5; Terraform/Automation 3/5; Kubernetes 1/5; GPU/Inference 1/5; Customer
 |---|---|---|---|---|
 | 2026-11-07 | Lab A / Task 01 | None submitted | Not assessed | Learner paused lab |
 | 2026-11-09 | WSL2 readiness (pre-Lab A / Task 01) | Learner supplied outputs of `cat /etc/os-release`, `uname -a`, `lscpu`, `lsipc`, `lsmem`. Ubuntu 22.04.5, WSL2 kernel 6.6.87.2, 14 logical CPUs, 8 GB online WSL2 memory. | OS/kernel/CPU identified | `lsipc` describes IPC, not available RAM; no points assigned. |
+| 2026-11-09 | Non-root sudo authentication | Learner ran `sudo -v && echo "sudo OK"`, received password prompt and `Sorry, try again`; learner says this sudo-group user has no known password. | Blocked — no verified sudo execution | Do not confuse group membership with passwordless sudo. Avoid repeated guesses or sudoers/password changes without confirming host ownership/policy. |
 | 2026-11-09 | WSL2 account/groups inspection | Output of `id` from non-root prompt: uid=1000(pam3hc), gid=1000(pam3hc), groups include 27(sudo) and 999(docker). | Non-root identity confirmed; sudo execution not yet verified | Docker group may confer root-equivalent power via rootful daemon/socket; do not presume least privilege from UID alone. |
 | 2026-11-09 | WSL2 memory and disk inspection | `free -h`: 7.8 GiB total, 5.8 GiB used, 124 MiB free, 1.8 GiB buff/cache, 1.6 GiB available, swap 403 MiB / 12 GiB. `df -h`: `/dev/sdd` mounted at `/` with 890 GiB available; `C:` at `/mnt/c` with 107 GiB available; Docker overlays shown. | Evidence accepted, readiness still partial | Swap occupancy does not prove swap activity; snapfuse 100% normal; do not infer host physical free capacity from WSL VHD `df`. Non-root sudo remains to verify. Avoid memory pressure tests until constrained. |
 
