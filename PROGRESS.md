@@ -44,6 +44,8 @@ Linux 4/5; Terraform/Automation 3/5; Kubernetes 1/5; GPU/Inference 1/5; Customer
 
 | 2026-11-12 | Local Kubernetes OpenSearch pod inspection | `kubectl get pods -A` showed `opensearch-0` Running/Ready with 61 restarts, several other pods restarting similarly; learner provided `kubectl describe pod opensearch-0 -n default`. StatefulSet pod on `k8s-local-worker`: main container current Running; last termination `Unknown`, exit 255; event `SandboxChanged`; seven transient startup probe connection refusals. OpenSearch limit 1100Mi, request 100Mi; `OPENSEARCH_JAVA_OPTS=-Xms400m -Xmx400m`. | Real pod description obtained; OOMKilled **not confirmed** | Distinguish previous hypothetical 1Gi / -Xmx2g example from actual 1100Mi / 400m. Investigate node/container runtime and synchronized restart timing without changing corporate-managed cluster. No incident root cause or practical grade assigned. |
 
+| 2026-11-12 | Correlate WSL2 boot with OpenSearch container restart | `uptime -s` showed 2026-11-12 19:03:55 local; OpenSearch main container started 19:04:28 (+33 seconds); `SandboxChanged` event, last termination reason `Unknown` exit 255; many pods restarted in same interval. | Strong evidence WSL2 reboot explains latest OpenSearch container recreation; **not proof for all 61 historical restarts** | No OOMKilled evidence for most recent termination. Trigger of WSL2 reboot remains unverified. Other continuously failing pods such as shipping require independent investigation. |
+
 ## Updating this file
 After each **actual learning session**, update: date, current week/task, evidence links, rubric scores, blockers, next action and any revised learning priorities. Do not fabricate progress or scores. Ask for confirmation when evidence is ambiguous.
 
