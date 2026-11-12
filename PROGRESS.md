@@ -1,6 +1,6 @@
 # Learning Progress
 
-**Last recorded:** 2026-11-11
+**Last recorded:** 2026-11-12
 **Source of truth:** Evidence and explicit learner confirmations. This file is not an automated telemetry feed.
 
 ## Overall status
@@ -12,7 +12,7 @@
 - Entry assessment completed: **0 / 5**.
 - Scores: **Not yet assigned**.
 - Practical lab: **Resumed — WSL2 environment readiness checks and read-only process investigation in progress.** No app deployment, remediation, or incident lab completed.
-- Next task: **Lab A — Task 01**: Continue safe, read-only process / memory investigation and learner-led reasoning. Corporate-managed laptop confirmed; sudo check blocked because user password is unknown. No password, sudoers, Docker privilege, or memory-pressure/OOM changes without IT authorization and an isolated lab.
+- Next task: **Lab A — Task 01**: Investigate actual local Kubernetes OpenSearch restart causes, starting with read-only node status and sandbox events. Continue safe, read-only process / memory investigation and learner-led reasoning. Corporate-managed laptop confirmed; sudo check blocked because user password is unknown. No password, sudoers, Docker privilege, or memory-pressure/OOM changes without IT authorization and an isolated lab.
 - Evidence now submitted for OS/kernel/CPU, RAM/swap/disk, non-root user/group identity, `ps` process snapshot and follow-up PID investigation; sudo authentication not successful. Discussed JVM/cgroup/container OOM reasoning and held an informal technical-English speaking practice. Application deployment and incident evidence still pending. No rubric scores assigned.
 
 ## Entry assessment
@@ -41,6 +41,8 @@ Linux 4/5; Terraform/Automation 3/5; Kubernetes 1/5; GPU/Inference 1/5; Customer
 | 2026-11-11 | Java/OpenSearch process identification (read-only) | Learner ran `ps -p 11062 -o pid,ppid,user,comm` and `ps -p 11062 -o pid,ppid,etime,args`; observed JVM path `/usr/share/opensearch/jdk/bin/java`, parent PID 9328 and process runtime around 25–29 minutes. | Partial process identification; OpenSearch strongly indicated, not independently confirmed from full command line | Command line output truncated. No config changes or sensitive full command lines shared. |
 | 2026-11-11 | Linux/JVM/Kubernetes memory reasoning | Learner explained JVM vs. Java application; different heap sizes; `-Xmx` maximum vs. observed RSS; and that cgroup memory limit can trigger container OOM even when host RAM remains. Explored 1 GiB container limit vs. 2 GiB JVM max heap mismatch. | Conceptual discussion completed; not a scored lab | `-Xmx` is heap cap, not process or container total. Actual OpenSearch container limit and `-Xmx` not verified; scenario hypothetical. |
 | 2026-11-11 | Informal technical-English speaking practice | Learner practiced short statements about ~863 MiB RSS, local Kubernetes as a hypothesis, Linux kernel cgroup OOM, and Kubernetes `OOMKilled` status. Instructor corrected English grammar and phrasing. | Speaking practice performed; no formal assessment score | Distinguish hypothetical example (1 GiB limit, `-Xmx2g`) from measured local container settings. |
+
+| 2026-11-12 | Local Kubernetes OpenSearch pod inspection | `kubectl get pods -A` showed `opensearch-0` Running/Ready with 61 restarts, several other pods restarting similarly; learner provided `kubectl describe pod opensearch-0 -n default`. StatefulSet pod on `k8s-local-worker`: main container current Running; last termination `Unknown`, exit 255; event `SandboxChanged`; seven transient startup probe connection refusals. OpenSearch limit 1100Mi, request 100Mi; `OPENSEARCH_JAVA_OPTS=-Xms400m -Xmx400m`. | Real pod description obtained; OOMKilled **not confirmed** | Distinguish previous hypothetical 1Gi / -Xmx2g example from actual 1100Mi / 400m. Investigate node/container runtime and synchronized restart timing without changing corporate-managed cluster. No incident root cause or practical grade assigned. |
 
 ## Updating this file
 After each **actual learning session**, update: date, current week/task, evidence links, rubric scores, blockers, next action and any revised learning priorities. Do not fabricate progress or scores. Ask for confirmation when evidence is ambiguous.
