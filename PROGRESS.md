@@ -1,6 +1,6 @@
 # Learning Progress
 
-**Last recorded:** 2026-11-12
+**Last recorded:** 2026-11-18
 **Source of truth:** Evidence and explicit learner confirmations. This file is not an automated telemetry feed.
 
 ## Overall status
@@ -11,8 +11,8 @@
 - Overall completed weeks: **0 / 36**.
 - Entry assessment completed: **0 / 5**.
 - Scores: **Not yet assigned**.
-- Practical lab: **Resumed — WSL2 environment readiness checks and read-only process investigation in progress.** No app deployment, remediation, or incident lab completed.
-- Next task: **Lab A — Task 01**: Investigate actual local Kubernetes OpenSearch restart causes, starting with read-only node status and sandbox events. Continue safe, read-only process / memory investigation and learner-led reasoning. Corporate-managed laptop confirmed; sudo check blocked because user password is unknown. No password, sudoers, Docker privilege, or memory-pressure/OOM changes without IT authorization and an isolated lab.
+- Practical lab: **Hands-on evidence recorded** — CPU throttling sandbox experiment (2026-11-13) and kind worker image-pull incident recovery (2026-11-18). No formal entry-assessment score assigned; incident 02 HTTP Service accessibility remains open.
+- Next task: **Lab 04 / Incident 02** — Investigate HTTP Service access after recovering the `orders-api` Pods; also validate the committed kind proxy synchronization script on the user's WSL lab before treating recurrence prevention as tested. Formal entry assessment Lab A remains separate. Corporate-managed laptop restrictions still apply; do not change unrelated workloads without permission.
 - Evidence now submitted for OS/kernel/CPU, RAM/swap/disk, non-root user/group identity, `ps` process snapshot and follow-up PID investigation; sudo authentication not successful. Discussed JVM/cgroup/container OOM reasoning and held an informal technical-English speaking practice. Application deployment and incident evidence still pending. No rubric scores assigned.
 
 ## Entry assessment
@@ -45,6 +45,9 @@ Linux 4/5; Terraform/Automation 3/5; Kubernetes 1/5; GPU/Inference 1/5; Customer
 | 2026-11-12 | Local Kubernetes OpenSearch pod inspection | `kubectl get pods -A` showed `opensearch-0` Running/Ready with 61 restarts, several other pods restarting similarly; learner provided `kubectl describe pod opensearch-0 -n default`. StatefulSet pod on `k8s-local-worker`: main container current Running; last termination `Unknown`, exit 255; event `SandboxChanged`; seven transient startup probe connection refusals. OpenSearch limit 1100Mi, request 100Mi; `OPENSEARCH_JAVA_OPTS=-Xms400m -Xmx400m`. | Real pod description obtained; OOMKilled **not confirmed** | Distinguish previous hypothetical 1Gi / -Xmx2g example from actual 1100Mi / 400m. Investigate node/container runtime and synchronized restart timing without changing corporate-managed cluster. No incident root cause or practical grade assigned. |
 
 | 2026-11-12 | Correlate WSL2 boot with OpenSearch container restart | `uptime -s` showed 2026-11-12 19:03:55 local; OpenSearch main container started 19:04:28 (+33 seconds); `SandboxChanged` event, last termination reason `Unknown` exit 255; many pods restarted in same interval. | Strong evidence WSL2 reboot explains latest OpenSearch container recreation; **not proof for all 61 historical restarts** | No OOMKilled evidence for most recent termination. Trigger of WSL2 reboot remains unverified. Other continuously failing pods such as shipping require independent investigation. |
+
+| 2026-11-13 | CPU throttling sandbox experiment | [Lab report](labs/w01-linux-networking/cpu-throttling-lab-2026-11-13.md): measured cgroup v2 throttling for 0.5 vs. 1 CPU limits in isolated Docker workloads. | Lab evidence recorded; no formal entry-test grade | Container workload benchmark was controlled; application latency benefit not claimed. |
+| 2026-11-18 | Lab 04 / Incident 01: kind ImagePullBackOff | [Incident report](labs/w01-linux-networking/incident-01-kind-proxy-imagepullbackoff-2026-11-18.md): stale containerd proxy endpoint identified using Events, worker runtime env, proxy TCP/TLS and registry HTTP 401; systemd and runtime updated; both Pods 1/1 Running. [Proxy scripts](scripts/wsl-kind-proxy/README.md) committed. | Pod recovery **CONFIRMED**; script prevention **NOT YET TESTED ON USER WSL** | Current proxy endpoint reachable; existing NO_PROXY was preserved. Separate HTTP Service incident not yet resolved. |
 
 ## Updating this file
 After each **actual learning session**, update: date, current week/task, evidence links, rubric scores, blockers, next action and any revised learning priorities. Do not fabricate progress or scores. Ask for confirmation when evidence is ambiguous.
